@@ -1,0 +1,197 @@
+@import url('https://fonts.googleapis.com/css2?family=Nunito:wght@400;700&display=swap');
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body, html {
+  height: 100%;
+  font-family: 'Nunito', sans-serif;
+  transition: background-color 0.3s, color 0.3s;
+}
+
+.register-bg {
+  height: 100vh;
+  width: 100%;
+  background: linear-gradient(-45deg, #f0f9ff, #e0f2fe, #fefce8, #f8fafc);
+  background-size: 400% 400%;
+  animation: gradientFlow 10s ease infinite;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+}
+
+.register-bg.dark-mode {
+  background: linear-gradient(-45deg, #0f172a, #1e293b, #334155, #1e1e2f);
+}
+
+.theme-toggle {
+  position: absolute;
+  top: 20px;
+  right: 25px;
+  font-size: 22px;
+  cursor: pointer;
+  z-index: 10;
+  color: #334155;
+  transition: color 0.3s;
+}
+
+.dark-mode .theme-toggle {
+  color: #facc15;
+}
+
+@keyframes gradientFlow {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+
+.form-glass {
+  background: rgba(255, 255, 255, 0.2);
+  backdrop-filter: blur(20px);
+  border-radius: 16px;
+  padding: 40px;
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+  max-width: 420px;
+  width: 90%;
+  color: #1e293b;
+  text-align: center;
+  animation: fadeIn 1s ease;
+}
+
+.dark-mode .form-glass {
+  background: rgba(30, 41, 59, 0.6);
+  color: #f1f5f9;
+}
+
+.form-glass h2 {
+  margin-bottom: 10px;
+  font-size: 26px;
+}
+
+.form-glass p {
+  margin-bottom: 20px;
+  font-size: 14px;
+}
+
+form input {
+  width: 100%;
+  padding: 12px 16px;
+  margin: 10px 0;
+  border: none;
+  border-radius: 10px;
+  font-size: 14px;
+  background: rgba(255, 255, 255, 0.3);
+  color: #1e293b;
+  transition: all 0.3s ease;
+}
+
+.dark-mode form input {
+  background: rgba(71, 85, 105, 0.4);
+  color: #f1f5f9;
+}
+
+form input::placeholder {
+  color: #64748b;
+}
+
+.dark-mode form input::placeholder {
+  color: #cbd5e1;
+}
+
+form input:focus {
+  background: rgba(255, 255, 255, 0.5);
+  outline: none;
+  box-shadow: 0 0 0 2px #38bdf8;
+}
+
+.dark-mode form input:focus {
+  background: rgba(100, 116, 139, 0.5);
+}
+
+button {
+  width: 100%;
+  padding: 14px;
+  background: #60a5fa;
+  color: white;
+  border: none;
+  border-radius: 12px;
+  font-weight: bold;
+  font-size: 15px;
+  margin-top: 10px;
+  cursor: pointer;
+  transition: background 0.3s ease;
+}
+
+button:hover {
+  background: #3b82f6;
+}
+
+.login-link {
+  margin-top: 16px;
+  font-size: 14px;
+  color: #475569;
+}
+
+.dark-mode .login-link {
+  color: #e2e8f0;
+}
+
+.login-link span {
+  color: #facc15;
+  font-weight: 600;
+  cursor: pointer;
+  transition: color 0.2s ease;
+}
+
+.login-link span:hover {
+  color: #fde047;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(-20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+.success-popup {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background: #22c55e;
+  color: white;
+  padding: 16px 28px;
+  border-radius: 12px;
+  font-size: 16px;
+  font-weight: 600;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.25);
+  z-index: 1000;
+  animation: fadeInOut 3s ease;
+}
+
+@keyframes fadeInOut {
+  0% {
+    opacity: 0;
+    transform: translate(-50%, -60%);
+  }
+  20% {
+    opacity: 1;
+    transform: translate(-50%, -50%);
+  }
+  80% {
+    opacity: 1;
+    transform: translate(-50%, -50%);
+  }
+  100% {
+    opacity: 0;
+    transform: translate(-50%, -60%);
+  }
+}
