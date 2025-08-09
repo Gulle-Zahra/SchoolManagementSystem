@@ -1,8 +1,20 @@
 import express from "express"
 import dotenv from "dotenv"
 import mongoose from "mongoose"
+import cors from "cors"
+
+
+import authRoutes from './routes/AuthRoutes.js'
+import teacherRoutes from './routes/TeacherRoutes.js'
 
 const app = express()
+
+//middlewares 
+app.use(cors())
+app.use(express.json())
+
+app.use('/api/auth', authRoutes);
+app.use('/api/teachers', teacherRoutes);
 
 dotenv.config()
 
